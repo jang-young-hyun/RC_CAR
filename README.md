@@ -11,9 +11,9 @@
 1.	개발 툴 : Putty, Real VNC, Genny
 2.	개발 보드 : Raspberry Pi4
 3.	사용 기술 : Bluetooth(Flask), OPENCV, PWM제어, ADC(Ultrasonic)
-4.	
+   
 
-
+-
 
 1. 개요
 
