@@ -29,9 +29,13 @@
 
 
 ① Passive Mode
+
 → Pi Camera
+
 OPENCV의 Videocapture 클래스를 사용하여 연속적으로 카메라 스트리밍을 할 수 있게 구현
+
 → Bluetooth Controller
+
 (1)	Raspberry Pi를 server로, App inventor(Bluetooth Controller)를 client로 구성
 (2)	Controller가 Flask 웹 서버로 HTTP 요청을 보내면, Server로 온 HTTP 응답을 받는 형식으로 App의 Controller 기능을 구현
 
