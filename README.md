@@ -13,13 +13,15 @@
 3.	사용 기술 : Bluetooth(Flask), OPENCV, PWM제어, ADC(Ultrasonic)
    
 
+
 - 세부 내용
+
 
 1. 개요
 
 (1)	목적 – 보행 간의 교통사고를 방지하기 위한 Safety Bar 제작
 
-(2)	발표영상 https://www.youtube.com/watch?v=HSoI9tINvV8&t=29s
+(2)	발표영상 https://www.youtube.com/watch?v=TLFrJKQKpiY
 
 
 
