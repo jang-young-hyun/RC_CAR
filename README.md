@@ -9,6 +9,7 @@
 3.	사용 기술 : Bluetooth(Flask), OPENCV, PWM제어, ADC(Ultrasonic)
 
 시스템, 구성요소
+
    (1)	하드웨어 블록도
    
    ![image](https://github.com/jang-young-hyun/RC_CAR/assets/124988949/4725c00c-4404-4fc4-97b0-0e68b0fc7f2a)
