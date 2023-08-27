@@ -13,7 +13,7 @@
 3.	사용 기술 : Bluetooth(Flask), OPENCV, PWM제어, ADC(Ultrasonic)
    
 
--
+- 세부 내용
 
 1. 개요
 
@@ -47,7 +47,9 @@ OPENCV의 Videocapture 클래스를 사용하여 연속적으로 카메라 스�
 → Bluetooth Controller
 
 (1)	Raspberry Pi를 server로, App inventor(Bluetooth Controller)를 client로 구성
+
 (2)	Controller가 Flask 웹 서버로 HTTP 요청을 보내면, Server로 온 HTTP 응답을 받는 형식으로 App의 Controller 기능을 구현
+
 
 ② Auto Mode
 
@@ -71,18 +73,23 @@ OPENCV의 Videocapture 클래스를 사용하여 연속적으로 카메라 스�
 → Bluetooth Controller를 통해 Mode 전환 가능
 
 
+
 3.	BOM (Bill Of Materials)
 
 ![image](https://github.com/jang-young-hyun/RC_CAR/assets/124988949/f927b780-b125-4699-970f-4c25105eedc7)
 
+
+
 4.	개선사항
    
 ① 차선 검출 알고리즘
+
 초기 차선 검출 알고리즘 작성 시 Hough Transform을 통해 검출되는 좌, 우 차선의 교차점을 기준으로 코드를 작성 
 → 그러나 해당 알고리즘으로 동작 시 교차점 값을 계산하기 위한 연산이 많이 필요 
 → 0 ~ 30도와 같이 수평선에 근접한 선들은 검출에서 제외하고 검출되는 선들의 끝점의 평균값을 구하는 방법으로 연산 횟수 감소
 
 ② Thread
+
 초기 여러 센서를 사용하여 수동 모드에서 자동 모드로 전환 시 프로세스의 과부하로 작동이 중지 
 → 차선 검출, 차량 이동, 초음파 검출 등 3가지 기능에 Thread를 만들어 프로세스의 과부하 해소
 
@@ -92,10 +99,15 @@ OPENCV의 Videocapture 클래스를 사용하여 연속적으로 카메라 스�
 -> 원인 분석 결과 차선 검출 Thread 내에 스트리밍의 GUI를 만들어주는 imshow() 함수가 sub Thread에 있는 것을 확인 
 -> imshow() 함수를 MAIN Tread에서 원활하게 작동하기 위해 매개변수인 Mat 클래스 변수를 mutex를 이용하여 안전하게 변수 전달
 
+
+
 5.	느낀점
    
 ① 차량에 조향 장치를 달지 않아 좌, 우회전 시 각 모터의 high, low 상태를 계속 변경해줘야 하여 순간적인 좌, 우회전 상황에서 즉각적으로 반응하지 않았다. 
+
 -> 설계 전 여러 상황을 가정하여 H/W 설계를 해야 한다는 것을 확인
 
+
 ② OPENCV의 GUI를 Thread 내에서 호출하여 낮은 프레임으로 스트리밍되었다. 
+
 -> GUI와 같은 UI 업데이트를 처리할 때는 MAIN Tread에서 동작하도록 설계해야 한다는 것을 확인 
