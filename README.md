@@ -102,7 +102,7 @@ OPENCV의 Videocapture 클래스를 사용하여 연속적으로 카메라 스�
 
 -> 원인 분석 결과 차선 검출 Thread 내에 스트리밍의 GUI를 만들어주는 imshow() 함수가 sub Thread에 있는 것을 확인 
 
--> imshow() 함수를 MAIN Tread에서 원활하게 작동하기 위해 매개변수인 Mat 클래스 변수를 mutex를 이용하여 안전하게 변수 전달
+-> imshow() 함수를 MAIN Thread에서 원활하게 작동하기 위해 매개변수인 Mat 클래스 변수를 mutex를 이용하여 안전하게 변수 전달
 
 
 
@@ -115,4 +115,4 @@ OPENCV의 Videocapture 클래스를 사용하여 연속적으로 카메라 스�
 
 ② OPENCV의 GUI를 Thread 내에서 호출하여 낮은 프레임으로 스트리밍되었다. 
 
--> GUI와 같은 UI 업데이트를 처리할 때는 MAIN Tread에서 동작하도록 설계해야 한다는 것을 확인 
+-> GUI와 같은 UI 업데이트를 처리할 때는 MAIN Thread에서 동작하도록 설계해야 한다는 것을 확인 
